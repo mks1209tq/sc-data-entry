@@ -5,6 +5,7 @@
         </h2>
     </x-slot>
 
+    @section('content')
     <div class="pt-3">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -27,10 +28,22 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 flex flex-row">
-                    <div class="px-3">a</div>
+                    <div class="px-3">
+                    <?php
+                    $passports = App\Models\Passport::all();
+                    ?>
+                    @foreach ($passports as $passport)
+                        <!-- <p>{{ $passport->employee_id }}</p> -->
+                        <p>
+                            <a href="{{ route('passports.edit', $passport->id) }}">{{ $passport->file_name }}</a>
+                        </p>
+
+                    @endforeach
+                    </div>
                     <div class="px-3">b</div>
                 </div>
             </div>
         </div>
     </div>
+    @endsection
 </x-app-layout>

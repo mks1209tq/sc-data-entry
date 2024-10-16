@@ -37,18 +37,26 @@ class PassportController extends Controller
         return view('passport.show', compact('passport'));
     }
 
-    public function edit(Request $request, Passport $passport): Response
+    public function edit(Request $request, Passport $passport): View
     {
         return view('passport.edit', compact('passport'));
     }
 
-    public function update(PassportUpdateRequest $request, Passport $passport): Response
+    public function update(PassportUpdateRequest $request, Passport $passport): RedirectResponse
     {
-        $passport->update($request->validated());
+            
+        $updated = $passport->update($request->all());
 
-        $request->session()->flash('passport.id', $passport->id);
-
-        return redirect()->route('passports.index');
+        $updated = $passport->update(['is_data_entered' => true]);
+    
+        
+    
+        if ($updated) {
+            $request->session()->flash('passport.id', $passport->id);
+            return redirect()->route('dashboard')->with('success', 'Passport updated successfully');
+        } else {
+            return back()->with('error', 'Failed to update passport');
+        }
     }
 
     public function destroy(Request $request, Passport $passport): Response

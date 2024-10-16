@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('employee_id');
             $table->string('file_name');
-            $table->string('file_path');
-            $table->date('passport_expiry_date');
-            $table->date('visa_expiry_date');
+            $table->boolean('is_data_correct')->nullable()->default(false);
+            $table->boolean('is_data_entered')->nullable()->default(false);
+
+            $table->date('passport_expiry_date')->nullable();
+            $table->date('visa_expiry_date')->nullable();
             $table->foreignId('user_id')->nullable()->constrained('users');
             $table->timestamps();
             $table->softDeletes();

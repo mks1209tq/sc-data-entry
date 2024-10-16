@@ -58,8 +58,7 @@ class DatabaseSeeder extends Seeder
 
         Passport::factory()->create([
             'employee_id' => 1,
-            'file_name' => 'passport1.pdf',
-            'file_path' => 'storage/passports/passport1.pdf',
+            'file_name' => '10003.pdf',
             'passport_expiry_date' => '2025-01-01',
             'visa_expiry_date' => '2025-02-01',
             'user_id' => 1,
@@ -67,8 +66,7 @@ class DatabaseSeeder extends Seeder
 
         Passport::factory()->create([
             'employee_id' => 2,
-            'file_name' => 'passport2.pdf',
-            'file_path' => 'storage/passports/passport2.pdf',
+            'file_name' => '10003.pdf',
             'passport_expiry_date' => '2025-01-01',
             'visa_expiry_date' => '2025-02-01',
             'user_id' => 2,
@@ -76,12 +74,26 @@ class DatabaseSeeder extends Seeder
 
         Passport::factory()->create([
             'employee_id' => 3,
-            'file_name' => 'passport3.pdf',
-            'file_path' => 'storage/passports/passport3.pdf',
+            'file_name' => '10003-R.pdf',
             'passport_expiry_date' => '2025-01-01',
             'visa_expiry_date' => '2025-02-01',
-            'user_id' => 3,
+            'user_id' => 2,
         ]);
         
+        Passport::factory()->create([
+            'employee_id' => 4,
+            'file_name' => '10003-R.pdf',
+            'passport_expiry_date' => '2025-01-01',
+            'visa_expiry_date' => '2025-02-01',
+            'user_id' => 2,
+        ]);
+
+        Passport::factory()->create([
+            'employee_id' => 5,
+            'file_name' => '10003.pdf',
+            'passport_expiry_date' => '2025-01-01',
+            'visa_expiry_date' => '2025-02-01',
+            'user_id' => 2,
+        ]);
     }   
 }
