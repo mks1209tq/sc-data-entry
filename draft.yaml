@@ -1,0 +1,13 @@
+models:
+  Employee:
+    id
+    softDeletes
+  Passport:
+    softDeletes
+
+controllers:
+  Passport:
+    resource
+
+seeders: Passport
+    
