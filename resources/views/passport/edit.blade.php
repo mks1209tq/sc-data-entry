@@ -34,7 +34,7 @@
                                    type="date" 
                                    name="passport_expiry_date" 
                                    value="{{ old('passport_expiry_date', $passport->passport_expiry_date) }}" 
-                                       required>
+                                       required autofocus >
                         </div>
 
                         <div class="mb-4">
@@ -42,11 +42,11 @@
                                 Visa Expiry Date
                             </label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                   id="passport_expiry_date" 
+                                   id="visa_expiry_date" 
                                    type="date" 
                                    name="visa_expiry_date" 
                                    value="{{ old('visa_expiry_date', $passport->visa_expiry_date) }}" 
-                                       required>
+                                       required >
                         </div>
         
                         <div class="flex items-center justify-between">
