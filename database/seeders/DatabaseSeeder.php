@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Employee;
+use App\Models\Passport;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -54,5 +55,33 @@ class DatabaseSeeder extends Seeder
             'name' => 'employee4',
             'user_id' => 2,
         ]);
+
+        Passport::factory()->create([
+            'employee_id' => 1,
+            'file_name' => 'passport1.pdf',
+            'file_path' => 'storage/passports/passport1.pdf',
+            'passport_expiry_date' => '2025-01-01',
+            'visa_expiry_date' => '2025-02-01',
+            'user_id' => 1,
+        ]);
+
+        Passport::factory()->create([
+            'employee_id' => 2,
+            'file_name' => 'passport2.pdf',
+            'file_path' => 'storage/passports/passport2.pdf',
+            'passport_expiry_date' => '2025-01-01',
+            'visa_expiry_date' => '2025-02-01',
+            'user_id' => 2,
+        ]);
+
+        Passport::factory()->create([
+            'employee_id' => 3,
+            'file_name' => 'passport3.pdf',
+            'file_path' => 'storage/passports/passport3.pdf',
+            'passport_expiry_date' => '2025-01-01',
+            'visa_expiry_date' => '2025-02-01',
+            'user_id' => 3,
+        ]);
+        
     }   
 }
