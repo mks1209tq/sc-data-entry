@@ -35,12 +35,17 @@
                     @foreach ($passports as $passport)
                         <!-- <p>{{ $passport->employee_id }}</p> -->
                         <p>
+                            <a href="{{ route('passports.edit', $passport->id) }}">{{ $passport->id}}</a>&nbsp;
                             <a href="{{ route('passports.edit', $passport->id) }}">{{ $passport->file_name }}</a>
                         </p>
 
+                        
+
                     @endforeach
                     </div>
-                    <div class="px-3">b</div>
+                    <div class="px-3">
+                        
+                    </div>
                 </div>
             </div>
         </div>
