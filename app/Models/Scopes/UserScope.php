@@ -14,11 +14,20 @@ class UserScope implements Scope
      */
     public function apply(Builder $builder, Model $model): void
     {
-        $builder->where('is_data_correct', false)
-        ->where('is_data_entered', false);
-        
-        if(Auth::check() && !Auth::user()->is_admin){
-            $builder->where('user_id', Auth::user()->id);
+        if (Auth::check()) {
+            if (Auth::user()->is_admin) {
+                // No scope for admin users
+                return;
+            }
+
+            // For non-admin users
+            $builder->where('user_id', Auth::user()->id)
+                    ->where('is_data_correct', false)
+                    ->where('is_data_entered', false);
+        } else {
+            // For unauthenticated users or as a fallback
+            $builder->where('is_data_correct', false)
+                    ->where('is_data_entered', false);
         }
     }
 }
