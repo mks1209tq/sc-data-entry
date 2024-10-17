@@ -2,16 +2,16 @@
 
 namespace Database\Seeders;
 
-use App\Models\Passport;
+use App\Models\Cert;
 use Illuminate\Database\Seeder;
 
-class PassportSeeder extends Seeder
+class CertSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Passport::factory()->count(5)->create();
+        Cert::factory()->count(5)->create();
     }
 }

@@ -30,13 +30,13 @@
                 <div class="p-6 text-gray-900 flex flex-row">
                     <div class="px-3">
                     <?php
-                    $passports = App\Models\Passport::all();
+                    $certs = App\Models\Cert::all();
                     ?>
-                    @foreach ($passports as $passport)
-                        <!-- <p>{{ $passport->employee_id }}</p> -->
+                    @foreach ($certs as $cert)
+                        <!-- <p>{{ $cert->employee_id }}</p> -->
                         <p>
-                            <a href="{{ route('passports.edit', $passport->id) }}">{{ $passport->id}}</a>&nbsp;
-                            <a href="{{ route('passports.edit', $passport->id) }}">{{ $passport->file_name }}</a>
+                            <a href="{{ route('certs.edit', $cert->id) }}">{{ $cert->id}}</a>&nbsp;
+                            <a href="{{ route('certs.edit', $cert->id) }}">{{ $cert->file_name }}</a>
                         </p>
 
                         

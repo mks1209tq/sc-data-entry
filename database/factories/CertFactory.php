@@ -4,16 +4,16 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\Employee;
+use App\Models\Cert;
 
-class EmployeeFactory extends Factory
+class CertFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Employee::class;
+    protected $model = Cert::class;
 
     /**
      * Define the model's default state.

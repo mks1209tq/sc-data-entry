@@ -20,4 +20,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-Route::resource('passports', App\Http\Controllers\PassportController::class);
+
+
+
+Route::resource('certs', App\Http\Controllers\CertController::class);

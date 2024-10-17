@@ -1,21 +1,18 @@
 created:
-    - app/Http/Controllers/PassportController.php
-    - database/factories/EmployeeFactory.php
-    - database/factories/PassportFactory.php
-    - database/migrations/2024_10_16_074606_create_employees_table.php
-    - database/migrations/2024_10_16_074607_create_passports_table.php
-    - app/Models/Employee.php
-    - app/Models/Passport.php
-    - database/seeders/PassportSeeder.php
-    - tests/Feature/Http/Controllers/PassportControllerTest.php
-    - app/Http/Requests/PassportStoreRequest.php
-    - app/Http/Requests/PassportUpdateRequest.php
-    - resources/views/passport/index.blade.php
-    - resources/views/passport/create.blade.php
-    - resources/views/passport/show.blade.php
-    - resources/views/passport/edit.blade.php
+    - app/Http/Controllers/CertController.php
+    - database/factories/CertFactory.php
+    - database/migrations/2024_10_17_105946_create_certs_table.php
+    - app/Models/Cert.php
+    - database/seeders/CertSeeder.php
+    - tests/Feature/Http/Controllers/CertControllerTest.php
+    - app/Http/Requests/CertStoreRequest.php
+    - app/Http/Requests/CertUpdateRequest.php
+    - resources/views/cert/index.blade.php
+    - resources/views/cert/create.blade.php
+    - resources/views/cert/show.blade.php
+    - resources/views/cert/edit.blade.php
 updated:
     - routes/web.php
 models:
-    Employee: { id: id, softdeletes: softDeletes }
-    Passport: { softdeletes: softDeletes }
+    User: { name: string, is_admin: "string default:'0'", email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string nullable' }
+    Cert: { id: id, softdeletes: softDeletes }
