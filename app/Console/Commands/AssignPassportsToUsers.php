@@ -6,15 +6,16 @@ use Illuminate\Console\Command;
 use App\Models\Passport;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use App\Models\Cert;
 
 class AssignPassportsToUsers extends Command
 {
-    protected $signature = 'passports:assign {count=10 : Number of passports to assign per user}';
-    protected $description = 'Assign unassigned passports to users';
+    protected $signature = 'certs:assign {count=10 : Number of certs to assign per user}';
+    protected $description = 'Assign unassigned certs to users';
 
     public function handle()
     {
-        $this->info('Starting passport assignment process...');
+        $this->info('Starting certs assignment process...');
 
         $countPerUser = $this->argument('count');
 
@@ -30,11 +31,11 @@ class AssignPassportsToUsers extends Command
         try {
             foreach ($users as $user) {
                 $assignedCount = $this->assignPassportsToUser($user, $countPerUser);
-                $this->info("Assigned $assignedCount passports to user ID: " . $user->id);
+                $this->info("Assigned $assignedCount certs to user ID: " . $user->id);
             }
 
             DB::commit();
-            $this->info('Passport assignment completed successfully.');
+            $this->info('Certs assignment completed successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             $this->error('An error occurred: ' . $e->getMessage());
@@ -46,15 +47,15 @@ class AssignPassportsToUsers extends Command
     {
         $assignedCount = 0;
 
-        $unassignedPassports = Passport::whereNull('user_id')
-            ->where('is_data_entered', false)
-            ->where('is_data_correct', false)
+        $unassignedCerts = Cert::whereNull('user_id')
+            // ->where('is_data_entered', false)
+            // ->where('is_data_correct', false)
             ->limit($count)
             ->get();
 
-        foreach ($unassignedPassports as $passport) {
-            $passport->user_id = $user->id;
-            $passport->save();
+        foreach ($unassignedCerts as $cert) {
+            $cert->user_id = $user->id;
+            $cert->save();
             $assignedCount++;
         }
 
