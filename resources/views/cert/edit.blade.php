@@ -14,13 +14,25 @@
        
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="employee_id">
-                                ID
+                                REC_ID
                             </label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="id" 
                                    type="text" 
                                    name="id" 
                                    value="{{ old('id', $cert->id) }}" 
+                                   readonly>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="employee_id">
+                                PO Number
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="po_number" 
+                                   type="text" 
+                                   name="po_number" 
+                                   value="{{ old('PO_number', $cert->PO_number) }}" 
                                    readonly>
                         </div>
 
@@ -33,7 +45,7 @@
                                    type="text" 
                                    name="project_id" 
                                    value="{{ old('project_id', $cert->project_id) }}" 
-                                       required autofocus >
+                                        autofocus >
                         </div> -->
 <!-- 
                         <div class="mb-4">
@@ -45,7 +57,7 @@
                                    type="text" 
                                    name="order_id" 
                                    value="{{ old('order_id', $cert->order_id) }}" 
-                                       required >
+                                        >
                         </div> -->
 
                         
@@ -54,13 +66,38 @@
                                 Select
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                   id="order_id" 
+                                   id="single_po" 
                                    type="checkbox" 
-                                   name="order_id" 
-                                   value="{{ old('order_id', $cert->order_id) }}" 
-                                       required >
+                                   name="single_po" 
+                                   value="1"
+                                   {{ old('single_po', $cert->single_po) ? 'checked' : ''}}
+                                >
+                        </div>
+
+                        <!-- <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="employee_id">
+                                Advance Amount
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="advance_amount" 
+                                   type="text" 
+                                   name="advance_amount" 
+                                   value="{{ old('id', $cert->advance_amount) }}" 
+                                   readonly>
                         </div>
         
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="employee_id">
+                                Retention Amount
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="retention_amount" 
+                                   type="text" 
+                                   name="retention_amount" 
+                                   value="{{ old('retention_amount', $cert->retention_amount) }}" 
+                                   readonly>
+                        </div> -->
+
                         <div class="flex items-center justify-between">
                                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline" 
                                             type="submit">
@@ -80,7 +117,7 @@
                     $file = '/finished/';
                     $file .= $cert->file_name;
                     $docUrl = Storage::disk('idrive_e2')->temporaryUrl($file, now()->addMinutes(5));
-                    $docUrl .= '#view=FitH';
+                    $docUrl .= '#zoom=150';
                     ?>
 
                             <div class="w-full h-full">

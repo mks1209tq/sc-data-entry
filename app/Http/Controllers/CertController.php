@@ -48,7 +48,7 @@ class CertController extends Controller
 
         if($updated){
             $request->session()->flash('cert.id', $cert->id);
-            return redirect()->route('dashboard')->with('success','Passport updated successfully');
+            return redirect()->route('dashboard')->with('success','PC updated successfully');
         }
         else {
             return back()->with('error', 'Failed to update passport');
