@@ -24,7 +24,7 @@
                                    readonly>
                         </div>
 
-                        <div class="mb-4">
+                        <!-- <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="project_id">
                                 Project ID
                             </label>
@@ -34,8 +34,8 @@
                                    name="project_id" 
                                    value="{{ old('project_id', $cert->project_id) }}" 
                                        required autofocus >
-                        </div>
-
+                        </div> -->
+<!-- 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="order_id">
                                 Order ID
@@ -43,6 +43,19 @@
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="order_id" 
                                    type="text" 
+                                   name="order_id" 
+                                   value="{{ old('order_id', $cert->order_id) }}" 
+                                       required >
+                        </div> -->
+
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="order_id">
+                                Select
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="order_id" 
+                                   type="checkbox" 
                                    name="order_id" 
                                    value="{{ old('order_id', $cert->order_id) }}" 
                                        required >
@@ -62,11 +75,12 @@
                     </div>
                     <div class="w-8/12 px-20" style="height: calc(100vh - 180px);">
                     <?php
-                    $file = $cert->file_name;
-
-                    // dd($file);
+                    // you cannot add subfolder path in env.
+                    // if you have a subfolder in idrive, add it to the path in your code.
+                    $file = '/finished/';
+                    $file .= $cert->file_name;
                     $docUrl = Storage::disk('idrive_e2')->temporaryUrl($file, now()->addMinutes(5));
-                    $docUrl .= '#view=FitV';
+                    $docUrl .= '#view=FitH';
                     ?>
 
                             <div class="w-full h-full">
