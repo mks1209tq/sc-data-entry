@@ -24,7 +24,8 @@ class UserScope implements Scope
             $builder->where('user_id', Auth::user()->id)
                     // ->where('is_data_correct', false)
                     ->where('single_po', "")
-                    ->where('PO_number', '!=', '#N/A');
+                    ->where('PO_number', '!=', '#N/A')
+                    ->where('advance_amount', '!=', 2);
 
         } else {
             // For unauthenticated users or as a fallback

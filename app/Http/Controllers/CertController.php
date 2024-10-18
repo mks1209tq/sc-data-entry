@@ -45,6 +45,7 @@ class CertController extends Controller
     public function update(CertUpdateRequest $request, Cert $cert): RedirectResponse
     {
         $updated = $cert->update($request->all());
+        $updated = $cert->update(['advance_amount' => '2']);
 
         if($updated){
             $request->session()->flash('cert.id', $cert->id);
