@@ -29,9 +29,12 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 flex flex-row">
                     <div class="px-3">
+
                     <?php
                     $certs = App\Models\Cert::all();
+                    $certCount = $certs->count();
                     ?>
+                    <div class="my-2 text-gray-500">There are {{ $certCount }} matching records.</div>
                     @foreach ($certs as $cert)
                         <!-- <p>{{ $cert->employee_id }}</p> -->
                         <p>
