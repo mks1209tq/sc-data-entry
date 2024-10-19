@@ -39,10 +39,10 @@
                         </div>
 
                         <div class="mb-4">
-                            <label   class="hidden block text-gray-700 text-sm font-bold mb-2" for="PO Num">
+                            <label   class="block text-gray-700 text-sm font-bold mb-2" for="PO Num">
                                 SWO Number
                             </label>
-                            <input class="hidden shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="po_number" 
                                    type="text" 
                                    name="po_number" 
@@ -74,12 +74,12 @@
 
                         
                         <div class="mb-4">
-                            <label class="hidden block text-gray-700 text-sm font-bold mb-2 " for="order_id">
+                            <label class=" block text-gray-700 text-sm font-bold mb-2 " for="order_id">
                                 Single PO
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="single_po" 
-                                   type="hidden" 
+                                   type="checkbox" 
                                    name="single_po" 
                                    value="1"
                                    {{ old('single_po', $cert->single_po) ? 'checked' : ''}}
@@ -95,10 +95,7 @@
                         
 
                         <div class="flex items-center justify-between">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline" 
-                                            type="submit">
-                                    Single PO
-                                </button>
+                                
                                
                                 
                             </div>
@@ -122,12 +119,12 @@
 
                         
                         <div class="mb-4">
-                            <label class="hidden block text-gray-700 text-sm font-bold mb-2" for="single_po">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="single_po">
                                 Multi PO
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="advance_amount" 
-                                   type="hidden" 
+                                   type="checkbox" 
                                    name="advance_amount" 
                                    value="1"
                                    {{ old('advance_amount', $cert->advance_amount) ? 'checked' : ''}}
@@ -137,10 +134,7 @@
                                               
 
                         <div class="flex items-center justify-between">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline" 
-                                            type="submit">
-                                    Multiple PO
-                                </button>
+                                
                                 
                                
                             </div>
@@ -162,12 +156,12 @@
 
                         
                         <div class="mb-4">
-                            <label class="hidden block text-gray-700 text-sm font-bold mb-2" for="single_po">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="single_po">
                                 Issue
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="col1" 
-                                   type="hidden" 
+                                   type="checkbox" 
                                    name="col1" 
                                    value="1"
                                    {{ old('col1', $cert->col1) ? 'checked' : ''}}
@@ -180,10 +174,7 @@
 
                         <div class="flex items-center justify-between">
                                 
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline" 
-                                            type="submit">
-                                    Something Wrong
-                                </button>
+                                
                                
                             </div>
 

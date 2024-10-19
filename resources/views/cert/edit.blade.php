@@ -8,9 +8,11 @@
             <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"href="{{ route('certs.edit', $cert->id) }}">
                                 {{ $cert->user() ? $cert->user->id . ' - ' . $cert->user->name : 'Unassigned' }}
                             </a> 
-                            <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"href="{{ route('certs.show', $cert->id) }}">
-                                Show Record
-                            </a>     
+                            @if(auth()->user() && auth()->user()->is_admin)
+                                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="{{ route('certs.show', $cert->id) }}">
+                                    Show Record
+                                </a>
+                            @endif    
             <a href="{{ route('dashboard') }}" 
                                    class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
                                     Cancel
