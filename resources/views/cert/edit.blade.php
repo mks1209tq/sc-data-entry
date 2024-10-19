@@ -7,7 +7,10 @@
             <div class="flex justify-between my-2">
             <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"href="{{ route('certs.edit', $cert->id) }}">
                                 {{ $cert->user() ? $cert->user->id . ' - ' . $cert->user->name : 'Unassigned' }}
-                            </a>      
+                            </a> 
+                            <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"href="{{ route('certs.show', $cert->id) }}">
+                                Show Record
+                            </a>     
             <a href="{{ route('dashboard') }}" 
                                    class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
                                     Cancel
@@ -185,6 +188,8 @@
                                 </button>
                                
                             </div>
+
+                            
                             
                         </form>
                     </div>

@@ -11,14 +11,14 @@ use Illuminate\View\View;
 
 class CertController extends Controller
 {
-    public function index(Request $request): Response
+    public function index(Request $request): View
     {
         $certs = Cert::all();
 
         return view('cert.index', compact('certs'));
     }
 
-    public function create(Request $request): Response
+    public function create(Request $request): View
     {
         return view('cert.create');
     }
@@ -32,7 +32,7 @@ class CertController extends Controller
         return redirect()->route('certs.index');
     }
 
-    public function show(Request $request, Cert $cert): Response
+    public function show(Request $request, Cert $cert): View
     {
         return view('cert.show', compact('cert'));
     }
