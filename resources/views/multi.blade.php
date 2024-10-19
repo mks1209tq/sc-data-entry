@@ -31,7 +31,11 @@
                     <div class="px-3">
                     <?php
                     $certs = App\Models\Cert::all()->where('single_po', '!=', 1)->where('advance_amount', 2);
+
+                    $certCount = $certs->count();
                     ?>
+                    <div>There are {{ $certCount }} matching records.</div>
+                    
                     @foreach ($certs as $cert)
                         <!-- <p>{{ $cert->employee_id }}</p> -->
                         <p>
