@@ -33,10 +33,10 @@
                         </div>
 
                         <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="PO Num">
+                            <label   class="hidden block text-gray-700 text-sm font-bold mb-2" for="PO Num">
                                 SWO Number
                             </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                            <input class="hidden shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="po_number" 
                                    type="text" 
                                    name="po_number" 
@@ -68,7 +68,7 @@
 
                         
                         <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2 hidden" for="order_id">
+                            <label class="hidden block text-gray-700 text-sm font-bold mb-2 " for="order_id">
                                 Single PO
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
@@ -116,12 +116,12 @@
 
                         
                         <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="single_po">
+                            <label class="hidden block text-gray-700 text-sm font-bold mb-2" for="single_po">
                                 Multi PO
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="advance_amount" 
-                                   type="checkbox" 
+                                   type="hidden" 
                                    name="advance_amount" 
                                    value="1"
                                    {{ old('advance_amount', $cert->advance_amount) ? 'checked' : ''}}
@@ -156,12 +156,12 @@
 
                         
                         <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="single_po">
+                            <label class="hidden block text-gray-700 text-sm font-bold mb-2" for="single_po">
                                 Issue
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="col1" 
-                                   type="checkbox" 
+                                   type="hidden" 
                                    name="col1" 
                                    value="1"
                                    {{ old('col1', $cert->col1) ? 'checked' : ''}}
