@@ -37,6 +37,10 @@
                         <p>
                             <a href="{{ route('certs.edit', $cert->id) }}">{{ $cert->id}}</a>&nbsp;
                             <a href="{{ route('certs.edit', $cert->id) }}">{{ $cert->file_name }}</a>
+                            <span class="text-gray-500">&nbsp;&nbsp;</span>
+                            <a href="{{ route('certs.edit', $cert->id) }}">
+                                {{ $cert->user() ? $cert->user->id . ' - ' . $cert->user->name : 'Unassigned' }}
+                            </a>
                         </p>
 
                         

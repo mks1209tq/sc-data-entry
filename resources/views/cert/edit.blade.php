@@ -4,11 +4,16 @@
     <div class="pt-3">
     
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="flex justify-end my-2">
+            <div class="flex justify-between my-2">
+            <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"href="{{ route('certs.edit', $cert->id) }}">
+                                {{ $cert->user() ? $cert->user->id . ' - ' . $cert->user->name : 'Unassigned' }}
+                            </a>      
             <a href="{{ route('dashboard') }}" 
                                    class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
                                     Cancel
                                     </a>
+                                    
+                                                     
             </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 flex flex-row">
