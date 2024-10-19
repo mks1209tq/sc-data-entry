@@ -63,7 +63,7 @@
                         
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="order_id">
-                                Select
+                                Single PO
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="single_po" 
@@ -71,6 +71,19 @@
                                    name="single_po" 
                                    value="1"
                                    {{ old('single_po', $cert->single_po) ? 'checked' : ''}}
+                                >
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="order_id">
+                                Select
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="col1" 
+                                   type="checkbox" 
+                                   name="col1" 
+                                   value="1"
+                                   {{ old('col1', $cert->col1) ? 'checked' : ''}}
                                 >
                         </div>
 
