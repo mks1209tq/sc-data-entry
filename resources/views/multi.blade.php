@@ -34,7 +34,7 @@
 
                     $certCount = $certs->count();
                     ?>
-                    <divmy-2 text-gray-500>There are {{ $certCount }} matching records.</div>
+                    <div class="my-2 text-gray-500">There are {{ $certCount }} matching records.</div>
                     
                     @foreach ($certs as $cert)
                         <!-- <p>{{ $cert->employee_id }}</p> -->
