@@ -78,15 +78,27 @@
 
                         
                         <div class="mb-4">
-                            <label class="hidden block text-gray-700 text-sm font-bold mb-2 " for="order_id">
-                                Single PO
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col2">
+                                PO Year
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                   id="single_po" 
-                                   type="hidden" 
-                                   name="single_po" 
-                                   value="1"
-                                   {{ old('single_po', $cert->single_po) ? 'checked' : ''}}
+                                   id="col2" 
+                                   type="text" 
+                                   name="col2" 
+                                   value="{{ old('col2', $cert->col2) }}"
+                                   autofocus
+                                >
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col3">
+                                PO Number
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="col3" 
+                                   type="text" 
+                                   name="col3" 
+                                   value="{{ old('col3', $cert->col3) }}"
                                    
                                 >
                         </div>
@@ -101,7 +113,7 @@
                         <div class="flex items-center justify-between">
                                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline" 
                                             type="submit">
-                                    Single PO
+                                    Submit
                                 </button>
                                
                                 
@@ -110,6 +122,11 @@
 
 
 
+
+
+
+
+                        
 
 
 
@@ -126,46 +143,16 @@
 
                         
                         <div class="mb-4">
-                            <label class="hidden block text-gray-700 text-sm font-bold mb-2" for="single_po">
-                                Multi PO
+                        <label class=" block text-gray-700 text-sm font-bold mb-2" for="single_po">
+                                Enter Issue 
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                   id="advance_amount" 
-                                   type="hidden" 
-                                   name="advance_amount" 
-                                   value="1"
-                                   {{ old('advance_amount', $cert->advance_amount) ? 'checked' : ''}}
+                                   id="col5" 
+                                   type="textarea" 
+                                   name="col5" 
+                                   value="{{ old('col5', $cert->col5) }}"
+                                   {{ old('col1', $cert->col1) ? 'checked' : ''}}
                                 >
-                        </div>
-
-                                              
-
-                        <div class="flex items-center justify-between">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline" 
-                                            type="submit">
-                                    Multiple PO
-                                </button>
-                                
-                               
-                            </div>
-                          
-                        </form>
-
-
-
-
-                        <form action="{{ route('certs.update', $cert->id) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                        @csrf
-                        @method('PUT')
-
-                        <input type="hidden" name="id" value="{{ $cert->id }}">
-       
-                                             
-
-                        
-
-                        
-                        <div class="mb-4">
                             <label class="hidden block text-gray-700 text-sm font-bold mb-2" for="single_po">
                                 Issue
                             </label>
