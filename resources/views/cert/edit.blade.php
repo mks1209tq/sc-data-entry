@@ -151,7 +151,7 @@
                                    type="textarea" 
                                    name="col5" 
                                    value="{{ old('col5', $cert->col5) }}"
-                                   {{ old('col1', $cert->col1) ? 'checked' : ''}}
+                                   {{ old('col5', $cert->col5) ? 'checked' : ''}}
                                 >
                             <label class="hidden block text-gray-700 text-sm font-bold mb-2" for="single_po">
                                 Issue
