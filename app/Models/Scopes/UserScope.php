@@ -22,7 +22,7 @@ class UserScope implements Scope
 
             // For non-admin users
             $builder->where('user_id', Auth::user()->id)
-                    ->where('single_po', 0)
+                    ->where('single_po', 1)
                     ->where('PO_number', '!=', '#N/A')
                     ->where('advance_amount', '!=', 2)
                     ->where('col1', '!=', 2);
