@@ -25,7 +25,7 @@ class UserScope implements Scope
                     ->where('single_po', 1)
                     // ->where('PO_number', '!=', '#N/A')
                     ->where('advance_amount', '!=', 2)
-                    ->where('col7', '!=', 1);
+                    ->where('col4', '!=', 1);
 
         } else {
             // For unauthenticated users or as a fallback

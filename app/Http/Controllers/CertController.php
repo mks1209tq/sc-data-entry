@@ -50,7 +50,7 @@ class CertController extends Controller
         }
         
         $updated = $cert->update($request->all());
-        $updated = $cert->update(['advance_amount' => '2']);
+        $updated = $cert->update(['col4' => '1']);
         // $updated = $cert->update(['col1' => '2']);
 
         if($updated){
