@@ -153,16 +153,7 @@
                                    value="{{ old('col5', $cert->col5) }}"
                                    {{ old('col5', $cert->col5) ? 'checked' : ''}}
                                 >
-                            <label class="hidden block text-gray-700 text-sm font-bold mb-2" for="single_po">
-                                Issue
-                            </label>
-                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                   id="col1" 
-                                   type="hidden" 
-                                   name="col1" 
-                                   value="1"
-                                   {{ old('col1', $cert->col1) ? 'checked' : ''}}
-                                >
+                            
                         </div>
 
                         
