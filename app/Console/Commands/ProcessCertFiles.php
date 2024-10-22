@@ -12,7 +12,7 @@ class ProcessCertFiles extends Command
     protected $signature = 'app:cert';
     protected $description = 'Process certificate files and add file names to Cert model';
 
-    
+    // check pull
     
     public function handle()
     {
