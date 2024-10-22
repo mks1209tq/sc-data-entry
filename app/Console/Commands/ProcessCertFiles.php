@@ -31,11 +31,13 @@ class ProcessCertFiles extends Command
             $projectId = $this->extractProjectId($fileName);
             $orderId = $this->extractOrderId($fileName);
             $pcId = $this->extractPcId($fileName);
+            
 
             Cert::firstOrCreate(['file_name' => $fileName,
             'project_id' => $projectId,
             'order_id' => $orderId,
-            'pc_id' => $pcId
+            'pc_id' => $pcId,
+            
         ]);
 
             $this->info("Processed: $fileName");
@@ -48,16 +50,11 @@ class ProcessCertFiles extends Command
     }
 
     private function extractProjectId($fileName)
-    {
-        // Regex pattern to match PIE20201006 at the start of the filename
-        $pattern = '/^(PIE\d{8})/';
-        
-        if (preg_match($pattern, $fileName, $matches)) {
-            return $matches[1];
-        }
-
-        return null; // Return null if no match found
-    }
+{
+    // Extract everything up to the first hyphen
+    $parts = explode('-', $fileName, 2);
+    return $parts[0];
+}
 
     private function extractOrderId($fileName)
 {

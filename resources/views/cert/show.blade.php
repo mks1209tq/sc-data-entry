@@ -18,8 +18,8 @@
             </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 flex flex-row">
-                    <div class="flex flex-col ">
-                    <div class="w-4/12 px-3 w-full">
+                    <div class="flex flex-row ">
+                    <div class="w-2/12 px-3 w-full">
                     <form action="{{ route('certs.update', $cert->id) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         @csrf
                         @method('PUT')
@@ -183,6 +183,172 @@
                             
                         </form>
                     </div>
+
+                    <div class="w-2/12 px-3 w-full">
+                    <form action="{{ route('certs.update', $cert->id) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        @csrf
+                        @method('PUT')
+
+                        <input type="hidden" name="id" value="{{ $cert->id }}">
+       
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="employee_id">
+                                REC_ID
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="id" 
+                                   type="text" 
+                                   name="id" 
+                                   value="{{ old('id', $cert->id) }}" 
+                                   readonly>
+                        </div>
+
+                        <div class="mb-4">
+                            <label   class="block text-gray-700 text-sm font-bold mb-2" for="PO Num">
+                                SWO Number
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="po_number" 
+                                   type="text" 
+                                   name="po_number" 
+                                   value="{{ old('PO_number', $cert->PO_number) }}" 
+                                   readonly>
+                        </div>
+                        
+                        </form>
+
+
+
+
+
+                        <form action="{{ route('certs.update', $cert->id) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        @csrf
+                        @method('PUT')
+
+                        <input type="hidden" name="id" value="{{ $cert->id }}">
+       
+                        <div class="mb-4">
+                            
+                        </div>
+
+                        <div class="mb-4">
+                            
+                        </div>
+
+                        
+
+                        
+                        <div class="mb-4">
+                            <label class=" block text-gray-700 text-sm font-bold mb-2 " for="order_id">
+                                Single PO
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="single_po" 
+                                   type="checkbox" 
+                                   name="single_po" 
+                                   value="1"
+                                   {{ old('single_po', $cert->single_po) ? 'checked' : ''}}
+                                   onclick="handleSinglePOClick(event)"
+                                   
+                                >
+                        </div>
+
+                        <div class="mb-4">
+                            
+                                
+                        </div>
+
+                        
+
+                        <div class="flex items-center justify-between">
+                                
+                               
+                                
+                            </div>
+                        </form>
+
+
+
+
+
+
+
+                        <form action="{{ route('certs.update', $cert->id) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        @csrf
+                        @method('PUT')
+
+                        <input type="hidden" name="id" value="{{ $cert->id }}">
+       
+                                             
+
+                        
+
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="single_po">
+                                Multi PO
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="advance_amount" 
+                                   type="checkbox" 
+                                   name="advance_amount" 
+                                   value="1"
+                                   {{ old('advance_amount', $cert->advance_amount) ? 'checked' : ''}}
+                                >
+                        </div>
+
+                                              
+
+                        <div class="flex items-center justify-between">
+                                
+                                
+                               
+                            </div>
+                          
+                        </form>
+
+
+
+
+                        <form action="{{ route('certs.update', $cert->id) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        @csrf
+                        @method('PUT')
+
+                        <input type="hidden" name="id" value="{{ $cert->id }}">
+       
+                                             
+
+                        
+
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="single_po">
+                                Issue
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="col1" 
+                                   type="checkbox" 
+                                   name="col1" 
+                                   value="1"
+                                   {{ old('col1', $cert->col1) ? 'checked' : ''}}
+                                >
+                        </div>
+
+                        
+
+                        
+
+                        <div class="flex items-center justify-between">
+                                
+                                
+                               
+                            </div>
+
+                            
+                            
+                        </form>
+                    </div>
+
                     </div>
 
 
