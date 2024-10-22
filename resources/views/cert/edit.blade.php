@@ -74,32 +74,17 @@
                             
                         </div>
 
-                        
 
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col2">
-                                PO Year
-                            </label>
-                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                   id="col2" 
-                                   type="text" 
-                                   name="col2" 
-                                   value="{{ old('col2', $cert->col2) }}"
-                                   autofocus
-                                   required
-                                >
-                        </div>
 
                         <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col12">
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col19">
                                 PO Number Final
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                   id="col12" 
+                                   id="col19" 
                                    type="text" 
-                                   name="col12" 
-                                   value="{{ old('col12', $cert->col12) }}"
+                                   name="col19" 
+                                   value="{{ old('col19', $cert->col19) }}"
                                     required
                                    
                                 >
@@ -107,27 +92,59 @@
 
 
                         <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col8">
-                                Line amount
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col11">
+                                Work done
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                   id="col8" 
-                                   type="text" 
-                                   name="col8" 
-                                   value="{{ old('col8', $cert->col8) }}"
+                                   id="col11" 
+                                   type="number"
+                                   step="0.01"
+                                   name="col11" 
+                                   value="{{ old('col11', $cert->col11) }}"
                                    required
                                 >
                         </div>
 
                         <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col13">
+                                Material on site
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="col13" 
+                                   type="number"
+                                   step="0.01"
+                                   name="col13" 
+                                   value="{{ old('col13', $cert->col13) }}"
+                                   required
+                                   
+                                >
+                        </div>
+
+                        <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="advance_amount">
-                                Advance amount
+                                Advance Payment
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="advance_amount" 
-                                   type="text" 
+                                   type="number"
+                                   step="0.01"
                                    name="advance_amount" 
                                    value="{{ old('advance_amount', $cert->advance_amount) }}"
+                                   required
+                                   
+                                >
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col15">
+                                Recovery of advance
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="col15" 
+                                   type="number"
+                                   step="0.01"
+                                   name="col15" 
+                                   value="{{ old('col15', $cert->col15) }}"
                                    required
                                    
                                 >
@@ -139,9 +156,38 @@
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="retention_amount" 
-                                   type="text" 
+                                   type="number"
+                                   step="0.01"
                                    name="retention_amount" 
                                    value="{{ old('retention_amount', $cert->retention_amount) }}"
+                                   required
+                                >
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col17">
+                                Release retention first half
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="col17" 
+                                   type="number"
+                                   step="0.01"
+                                   name="col17" 
+                                   value="{{ old('col17', $cert->col17) }}"
+                                   required
+                                >
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col21">
+                                Release retention second half
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="col21" 
+                                   type="number"
+                                   step="0.01"
+                                   name="col21" 
+                                   value="{{ old('col21', $cert->col21) }}"
                                    required
                                 >
                         </div>
@@ -152,9 +198,24 @@
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="deduction_amount" 
-                                   type="text" 
+                                   type="number"
+                                   step="0.01"
                                    name="deduction_amount" 
                                    value="{{ old('deduction_amount', $cert->deduction_amount) }}"
+                                   required
+                                >
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col23">
+                                Invoice total
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="col23" 
+                                   type="number"
+                                   step="0.01"
+                                   name="col23" 
+                                   value="{{ old('col23', $cert->col23) }}"
                                    required
                                 >
                         </div>
