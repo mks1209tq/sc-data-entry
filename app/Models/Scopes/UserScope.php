@@ -26,6 +26,7 @@ class UserScope implements Scope
                     // ->where('PO_number', '!=', '#N/A')
                     ->where('col4', '!=', 1)//isUpdated
                     ->where('col7', '!=', 1);//isMulti
+                    ->where('col9', '!=','0');//PO_number_final
 
         } else {
             // For unauthenticated users or as a fallback
