@@ -25,7 +25,7 @@ class UserScope implements Scope
                     ->where('single_po', 1)
                     // ->where('PO_number', '!=', '#N/A')
                     ->where('col4', '!=', 1)//isUpdated
-                    ->where('col7', '!=', 1);//isMulti
+                    ->where('col7', '!=', 1)//isMulti
                     ->where('col9', '!=','0');//PO_number_final
 
         } else {
