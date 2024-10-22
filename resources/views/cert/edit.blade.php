@@ -87,21 +87,78 @@
                                    name="col2" 
                                    value="{{ old('col2', $cert->col2) }}"
                                    autofocus
+                                   required
                                 >
                         </div>
 
                         <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col3">
-                                PO Number
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col12">
+                                PO Number Final
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                   id="col3" 
+                                   id="col12" 
                                    type="text" 
-                                   name="col3" 
-                                   value="{{ old('col3', $cert->col3) }}"
+                                   name="col12" 
+                                   value="{{ old('col12', $cert->col12) }}"
+                                    required
                                    
                                 >
                         </div>
+
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col8">
+                                Line amount
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="col8" 
+                                   type="text" 
+                                   name="col8" 
+                                   value="{{ old('col8', $cert->col8) }}"
+                                   required
+                                >
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="advance_amount">
+                                Advance amount
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="advance_amount" 
+                                   type="text" 
+                                   name="advance_amount" 
+                                   value="{{ old('advance_amount', $cert->advance_amount) }}"
+                                   required
+                                   
+                                >
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="retention_amount">
+                                Retention amount
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="retention_amount" 
+                                   type="text" 
+                                   name="retention_amount" 
+                                   value="{{ old('retention_amount', $cert->retention_amount) }}"
+                                   required
+                                >
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="deduction_amount">
+                                Deduction amount
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="deduction_amount" 
+                                   type="text" 
+                                   name="deduction_amount" 
+                                   value="{{ old('deduction_amount', $cert->deduction_amount) }}"
+                                   required
+                                >
+                        </div>
+
 
                         <div class="mb-4">
                             
