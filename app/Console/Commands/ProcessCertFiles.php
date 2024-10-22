@@ -44,7 +44,7 @@ class ProcessCertFiles extends Command
         $this->info('All files processed successfully.');
 
         // Call updateLatestPCs() after processing all files
-        $this->updateLatestPCs();
+        // $this->updateLatestPCs();
     }
 
     private function extractProjectId($fileName)
