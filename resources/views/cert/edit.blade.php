@@ -3,7 +3,7 @@
     @section('content')
     <div class="pt-3">
     
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-1 lg:px-2">
             <div class="flex justify-between my-2">
             <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
                                 {{ $cert->user() ? $cert->user->id . ' - ' . $cert->user->name : 'Unassigned' }}
@@ -39,10 +39,10 @@
                                                      
             </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 flex flex-row">
+                <div class="p-1 text-gray-900 flex flex-row">
                     <div class="flex flex-col ">
-                    <div class="w-4/12 px-3 w-full">
-                    <form action="{{ route('certs.update', $cert->id) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <div class="w-4/12 px-1 w-full">
+                    <form action="{{ route('certs.update', $cert->id) }}" method="POST" class="bg-white shadow-md rounded px-2 pt-6 pb-8 mb-4">
                         @csrf
                         @method('PUT')
 
@@ -52,7 +52,7 @@
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="employee_id">
                                 REC_ID
                             </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                            <input class="shadow appearance-none border rounded w-full py-2 px-1 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="id" 
                                    type="text" 
                                    name="id" 
@@ -78,19 +78,13 @@
 
 
 
-                        <form action="{{ route('certs.update', $cert->id) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        <form action="{{ route('certs.update', $cert->id) }}" method="POST" class="bg-white shadow-md rounded px-1 pt-6 pb-8 mb-4">
                         @csrf
                         @method('PUT')
 
                         <input type="hidden" name="id" value="{{ $cert->id }}">
        
-                        <div class="mb-4">
-                            
-                        </div>
 
-                        <div class="mb-4">
-                            
-                        </div>
 
 
 
@@ -239,10 +233,7 @@
                         </div>
 
 
-                        <div class="mb-4">
-                            
-                                
-                        </div>
+
 
                         
 
@@ -267,7 +258,7 @@
 
 
 
-                        <form action="{{ route('certs.update', $cert->id) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        <form action="{{ route('certs.update', $cert->id) }}" method="POST" class="bg-white shadow-md rounded px-1 pt-6 pb-8 mb-4">
                         @csrf
                         @method('PUT')
 
@@ -326,7 +317,9 @@
 
 
 
-                    <div class="w-8/12 px-20" style="height: calc(100vh - 180px);">
+                    <!-- <div class="w-8/12" style="height: calc(100vh - 180px);"> -->
+                    <div class="w-8/12" style="width: 100% !important;">
+
                     <?php
                     // you cannot add subfolder path in env.
                     // if you have a subfolder in idrive, add it to the path in your code.
