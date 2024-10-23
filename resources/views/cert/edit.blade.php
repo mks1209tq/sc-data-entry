@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("calculatedTotal: " + calculatedTotal_fixed);
         console.log("invoiceTotal: " + invoiceTotal_fixed);
 
-        if (Math.abs(calculatedTotal_fixed - invoiceTotal_fixed) > 0) {
+        if (Math.abs(calculatedTotal_fixed - invoiceTotal_fixed) > 0.01) {
             totalLabel.classList.remove('bg-blue-500');   
             totalLabel.classList.add('bg-red-500');
             totalLabel.disabled = true;
