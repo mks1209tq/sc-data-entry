@@ -31,7 +31,7 @@
                     <div class="px-3">
 
                     <?php
-                    $certs = App\Models\Cert::all();
+                    $certs = App\Models\Cert::all()->where('col4', '!=', 1);//isUpdated;
                     $certCount = $certs->count();
                     ?>
                     <div class="my-2 text-gray-500">There are {{ $certCount }} matching records.</div>

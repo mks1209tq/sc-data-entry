@@ -23,8 +23,6 @@ class UserScope implements Scope
             // For non-admin users
             $builder->where('user_id', Auth::user()->id)
                     ->where('single_po', 1)
-                    // ->where('PO_number', '!=', '#N/A')
-                    ->where('col4', '!=', 1)//isUpdated
                     ->where('col7', '!=', 1)//isMulti
                     ->whereNotLike('col19', '0%');//PO_number_final
 

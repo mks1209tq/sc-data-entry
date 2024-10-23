@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Multi PO') }}
         </h2>
     </x-slot>
 
@@ -30,7 +30,7 @@
                 <div class="p-6 text-gray-900 flex flex-row">
                     <div class="px-3">
                     <?php
-                    $certs = App\Models\Cert::all()->where('single_po', '!=', 1)->where('advance_amount', 2);
+                    $certs = App\Models\Cert::all()->where('single_po', '!=', 1)->where('advance_amount', 2)->where('col4', '!=', 1);//isUpdated;
 
                     $certCount = $certs->count();
                     ?>
