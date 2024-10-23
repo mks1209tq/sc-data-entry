@@ -19,6 +19,10 @@ Route::get('/multi', function () {
     return view('multi');
 })->middleware(['auth', 'verified'])->name('multi');
 
+Route::get('/done', function () {
+    return view('done');
+})->middleware(['auth', 'verified'])->name('done');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

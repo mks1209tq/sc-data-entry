@@ -33,12 +33,13 @@ class ProcessCertFiles extends Command
             $pcId = $this->extractPcId($fileName);
             
 
-            Cert::firstOrCreate(['file_name' => $fileName,
-            'project_id' => $projectId,
-            'order_id' => $orderId,
-            'pc_id' => $pcId,
+            // Cert::firstOrCreate(['file_name' => $fileName,
+            // 'project_id' => $projectId,
+            // 'order_id' => $orderId,
+            // 'pc_id' => $pcId,
+            // 'latest_pc_id' => false,
             
-        ]);
+        // ]);
 
             $this->info("Processed: $fileName");
         }
@@ -46,7 +47,7 @@ class ProcessCertFiles extends Command
         $this->info('All files processed successfully.');
 
         // Call updateLatestPCs() after processing all files
-        // $this->updateLatestPCs();
+        $this->updateLatestPCs();
     }
 
     private function extractProjectId($fileName)
@@ -65,7 +66,7 @@ class ProcessCertFiles extends Command
         return $matches[1]; // Return the matched order ID
     }
 
-    return null; // Return null if no match found
+    return "order not found"; // Return null if no match found
 }
 
 private function extractPcId($fileName)
@@ -77,7 +78,7 @@ private function extractPcId($fileName)
         return $matches[1]; // Return the matched PC ID
     }
 
-    return null; // Return null if no match found
+    return "PC ID not found"; // Return null if no match found
 }
 
 private function updateLatestPCs()

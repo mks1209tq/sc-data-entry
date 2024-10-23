@@ -26,6 +26,11 @@
                         {{ __('Multi PO') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('done')" :active="request()->routeIs('done')">
+                        {{ __('Done') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
