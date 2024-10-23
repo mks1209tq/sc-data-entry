@@ -96,7 +96,7 @@
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="col19">
-                                PO Number Final
+                                SWO Reference
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="col19" 
@@ -111,7 +111,7 @@
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="col11">
-                                Work done
+                                Work Done to Date
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="col11" 
@@ -125,7 +125,7 @@
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="col13">
-                                Material on site
+                                Material on Site
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="col13" 
@@ -155,7 +155,7 @@
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="col15">
-                                Recovery of advance
+                                Recovery of Advance
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="col15" 
@@ -170,7 +170,7 @@
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="retention_amount">
-                                Retention amount
+                                Retention Amount
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="retention_amount" 
@@ -184,7 +184,7 @@
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="col17">
-                                Release retention first half
+                                Release Retention First Half
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="col17" 
@@ -198,7 +198,7 @@
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="col21">
-                                Release retention second half
+                                Release Retention Second Half
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="col21" 
@@ -212,7 +212,7 @@
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="deduction_amount">
-                                Deduction amount
+                                Deduction Amount
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="deduction_amount" 
@@ -226,7 +226,7 @@
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="col23">
-                                Invoice total
+                                Invoice Total
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="col23" 
