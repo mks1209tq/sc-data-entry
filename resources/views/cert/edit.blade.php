@@ -356,8 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateColorAndButton() {
         const workDone = parseFloat(workDoneInput.value) || 0;
-        // console.log("workDone: " + workDone);
-        const materialOnSite = parseFloat(materialOnSiteInput.value) || 0;
+       const materialOnSite = parseFloat(materialOnSiteInput.value) || 0;
         const advanceAmount = parseFloat(advanceAmountInput.value) || 0;
         const retentionAmount = parseFloat(retentionAmountInput.value) || 0;
         const deductionAmount = parseFloat(deductionAmountInput.value) || 0;
@@ -369,13 +368,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const calculatedTotal = workDone + materialOnSite + advanceAmount + releaseRetentionFirstHalf + releaseRetentionSecondHalf -
         (recoveryOfAdvance + retentionAmount + deductionAmount);
 
-        const calculatedTotal_fixed = parseFloat(calculatedTotal).toFixed(2);
-        const invoiceTotal_fixed = parseFloat(invoiceTotalInput.value).toFixed(2);
+        const calculatedTotal_fixed = Math.trunc(calculatedTotal * 100) / 100;
+        const invoiceTotal_fixed = Math.trunc(invoiceTotal * 100) / 100;
+
+        let difference =calculatedTotal_fixed - invoiceTotal_fixed;
+        difference = Math.trunc(difference * 100) / 100;
 
         console.log("calculatedTotal: " + calculatedTotal_fixed);
         console.log("invoiceTotal: " + invoiceTotal_fixed);
 
-        if (Math.abs(calculatedTotal_fixed - invoiceTotal_fixed) > 0.01) {
+        console.log("difference: " + difference);
+
+        // Math.abs(calculatedTotal_fixed - invoiceTotal_fixed) > 0.01
+
+
+        if (Math.abs(difference) > 0.01) {
             totalLabel.classList.remove('bg-blue-500');   
             totalLabel.classList.add('bg-red-500');
             totalLabel.disabled = true;
