@@ -5,13 +5,31 @@
     
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex justify-between my-2">
-            <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"href="{{ route('certs.edit', $cert->id) }}">
+            <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
                                 {{ $cert->user() ? $cert->user->id . ' - ' . $cert->user->name : 'Unassigned' }}
                             </a> 
                             @if(auth()->user() && auth()->user()->is_admin)
+                                @if($previousCert)
+                                    <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="{{ route('certs.edit', $previousCert->id) }}">
+                                        << Previous
+                                    </a>
+                                @else
+                                    <span class="inline-block align-baseline font-bold text-sm text-gray-400">
+                                        << Previous
+                                    </span>
+                                @endif
                                 <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="{{ route('certs.show', $cert->id) }}">
                                     Show Record
                                 </a>
+                                @if($nextCert)
+                                    <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="{{ route('certs.edit', $nextCert->id) }}">
+                                        Next >>
+                                    </a>
+                                @else
+                                    <span class="inline-block align-baseline font-bold text-sm text-gray-400">
+                                        Next >>
+                                    </span>
+                                @endif
                             @endif    
             <a href="{{ route('dashboard') }}" 
                                    class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">

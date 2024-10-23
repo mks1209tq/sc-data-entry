@@ -39,7 +39,19 @@ class CertController extends Controller
 
     public function edit(Request $request, Cert $cert): View
     {
-        return view('cert.edit', compact('cert'));
+        $previousCert = Cert::where('user_id', $cert->user_id)
+            ->where('col4', 1)
+            ->where('id', '<', $cert->id)
+            ->orderBy('id', 'desc')
+            ->first();
+
+        $nextCert = Cert::where('user_id', $cert->user_id)
+            ->where('col4', 1)
+            ->where('id', '>', $cert->id)
+            ->orderBy('id', 'asc')
+            ->first();
+        
+        return view('cert.edit', compact('cert', 'previousCert', 'nextCert'));
     }
 
     public function update(CertUpdateRequest $request, Cert $cert): RedirectResponse
