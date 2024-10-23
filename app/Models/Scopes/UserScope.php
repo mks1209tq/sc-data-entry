@@ -24,7 +24,7 @@ class UserScope implements Scope
             $builder->where('user_id', Auth::user()->id)
                     ->where('single_po', 1)
                     ->where('col7', '!=', 1)//isMulti
-                    ->whereNotLike('col19', '0%');//PO_number_final
+                    // ->whereNotLike('col19', '0%');//PO_number_final
 
         } else {
             // For unauthenticated users or as a fallback
