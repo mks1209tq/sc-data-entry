@@ -242,6 +242,8 @@
                                 type="submit">
                                 Submit
                         </button>
+                        
+
                                
                                 
                             </div>
@@ -354,6 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateColorAndButton() {
         const workDone = parseFloat(workDoneInput.value) || 0;
+        // console.log("workDone: " + workDone);
         const materialOnSite = parseFloat(materialOnSiteInput.value) || 0;
         const advanceAmount = parseFloat(advanceAmountInput.value) || 0;
         const retentionAmount = parseFloat(retentionAmountInput.value) || 0;
@@ -366,7 +369,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const calculatedTotal = workDone + materialOnSite + advanceAmount + releaseRetentionFirstHalf + releaseRetentionSecondHalf -
         (recoveryOfAdvance + retentionAmount + deductionAmount);
 
-        if (Math.abs(parseFloat(calculatedTotal.toFixed(2)) - invoiceTotal) > 0) {
+        const calculatedTotal_fixed = parseFloat(calculatedTotal).toFixed(2);
+        const invoiceTotal_fixed = parseFloat(invoiceTotalInput.value).toFixed(2);
+
+        console.log("calculatedTotal: " + calculatedTotal_fixed);
+        console.log("invoiceTotal: " + invoiceTotal_fixed);
+
+        if (Math.abs(calculatedTotal_fixed - invoiceTotal_fixed) > 0) {
             totalLabel.classList.remove('bg-blue-500');   
             totalLabel.classList.add('bg-red-500');
             totalLabel.disabled = true;
@@ -377,9 +386,8 @@ document.addEventListener('DOMContentLoaded', function() {
             totalLabel.classList.add('bg-blue-500');
             totalLabel.disabled = false;
             totalLabel.classList.remove('opacity-50', 'cursor-not-allowed');
-            totalLabel.title = '';
+            totalLabel.title = 'Totals match';
         }
-        // console.log(Math.abs(parseFloat(calculatedTotal.toFixed(2)) - invoiceTotal));
     }
 
     workDoneInput.addEventListener('input', updateColorAndButton);
@@ -394,6 +402,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initial check
     updateColorAndButton();
+
+    console.log();
+    
     
 });
 </script>
