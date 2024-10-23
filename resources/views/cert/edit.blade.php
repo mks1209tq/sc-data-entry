@@ -364,9 +364,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const recoveryOfAdvance = parseFloat(recoveryOfAdvanceInput.value) || 0;
 
         const calculatedTotal = workDone + materialOnSite + advanceAmount + releaseRetentionFirstHalf + releaseRetentionSecondHalf -
-        (recoveryOfAdvance + retentionAmount - deductionAmount);
+        (recoveryOfAdvance + retentionAmount + deductionAmount);
 
-        if (Math.abs(calculatedTotal - invoiceTotal) > 0.01) {
+        if (Math.abs(parseFloat(calculatedTotal.toFixed(2)) - invoiceTotal) > 0) {
             totalLabel.classList.remove('bg-blue-500');   
             totalLabel.classList.add('bg-red-500');
             totalLabel.disabled = true;
@@ -379,6 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
             totalLabel.classList.remove('opacity-50', 'cursor-not-allowed');
             totalLabel.title = '';
         }
+        // console.log(Math.abs(parseFloat(calculatedTotal.toFixed(2)) - invoiceTotal));
     }
 
     workDoneInput.addEventListener('input', updateColorAndButton);
@@ -393,6 +394,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initial check
     updateColorAndButton();
+    
 });
 </script>
     @endsection
