@@ -82,4 +82,11 @@ class CertController extends Controller
 
         return redirect()->route('certs.index');
     }
+
+    public function remove_issue_flag(Request $request, Cert $cert): Response
+    {
+        $cert->update(['col1' => '0']);
+
+        return redirect()->route('certs.somethingwrong');
+    }
 }

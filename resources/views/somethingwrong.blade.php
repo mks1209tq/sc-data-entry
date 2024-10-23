@@ -31,12 +31,17 @@
                     <div class="px-3">
                     <?php
                     $certs = App\Models\Cert::all()->where('col1', 1);
+                    $certCount = $certs->count();
                     ?>
+                    <div class="my-2 text-gray-500">There are {{ $certCount }} matching records.</div>
                     @foreach ($certs as $cert)
-                        <!-- <p>{{ $cert->employee_id }}</p> -->
+                        
                         <p>
                             <a href="{{ route('certs.edit', $cert->id) }}">{{ $cert->id}}</a>&nbsp;
                             <a href="{{ route('certs.edit', $cert->id) }}">{{ $cert->file_name }}</a>
+                            @if (Auth::user()->is_admin)
+                                <a href="{{ route('certs.remove_issue_flag', $cert->id) }}">Remove Issue Flag</a>
+                            @endif
                         </p>
 
                         

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CertController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,16 +24,24 @@ Route::get('/done', function () {
     return view('done');
 })->middleware(['auth', 'verified'])->name('done');
 
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+
 require __DIR__.'/auth.php';
 
+Route::resource('certs', CertController::class);
 
 
+Route::middleware('auth')->group(function () {
+    Route::get('/certsrm/{cert}/remove_issue_flag', [CertController::class, 'remove_issue_flag'])->name('certs.remove_issue_flag');
+    
+});
 
 
-Route::resource('certs', App\Http\Controllers\CertController::class);
