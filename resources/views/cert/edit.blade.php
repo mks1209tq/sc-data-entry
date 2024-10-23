@@ -238,10 +238,10 @@
                         
 
                         <div class="flex items-center justify-between">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline" 
-                                            type="submit">
-                                    Submit
-                                </button>
+                        <button id="total-label" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline" 
+                                type="submit">
+                                Submit
+                        </button>
                                
                                 
                             </div>
@@ -337,4 +337,64 @@
             </div>
         </div>
     </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("triggered");
+    const workDoneInput = document.getElementById('col11');
+    const materialOnSiteInput = document.getElementById('col13');
+    const advanceAmountInput = document.getElementById('advance_amount');
+    const releaseRetentionFirstHalfInput = document.getElementById('col17');
+    const releaseRetentionSecondHalfInput = document.getElementById('col21');
+    const recoveryOfAdvanceInput = document.getElementById('col15');
+    const retentionAmountInput = document.getElementById('retention_amount');
+    const deductionAmountInput = document.getElementById('deduction_amount');
+    const invoiceTotalInput = document.getElementById('col23');
+    const totalLabel = document.getElementById('total-label');
+
+    function updateColorAndButton() {
+        const workDone = parseFloat(workDoneInput.value) || 0;
+        const materialOnSite = parseFloat(materialOnSiteInput.value) || 0;
+        const advanceAmount = parseFloat(advanceAmountInput.value) || 0;
+        const retentionAmount = parseFloat(retentionAmountInput.value) || 0;
+        const deductionAmount = parseFloat(deductionAmountInput.value) || 0;
+        const invoiceTotal = parseFloat(invoiceTotalInput.value) || 0;
+        const releaseRetentionFirstHalf = parseFloat(releaseRetentionFirstHalfInput.value) || 0;
+        const releaseRetentionSecondHalf = parseFloat(releaseRetentionSecondHalfInput.value) || 0;
+        const recoveryOfAdvance = parseFloat(recoveryOfAdvanceInput.value) || 0;
+
+        const calculatedTotal = workDone + materialOnSite + advanceAmount + releaseRetentionFirstHalf + releaseRetentionSecondHalf -
+        (recoveryOfAdvance + retentionAmount - deductionAmount);
+
+        if (Math.abs(calculatedTotal - invoiceTotal) > 0.01) {
+            totalLabel.classList.remove('bg-blue-500');   
+            totalLabel.classList.add('bg-red-500');
+            totalLabel.disabled = true;
+            totalLabel.classList.add('opacity-50', 'cursor-not-allowed');
+            totalLabel.title = 'Totals do not match';
+        } else {
+            totalLabel.classList.remove('bg-red-500');
+            totalLabel.classList.add('bg-blue-500');
+            totalLabel.disabled = false;
+            totalLabel.classList.remove('opacity-50', 'cursor-not-allowed');
+            totalLabel.title = '';
+        }
+    }
+
+    workDoneInput.addEventListener('input', updateColorAndButton);
+    materialOnSiteInput.addEventListener('input', updateColorAndButton);
+    advanceAmountInput.addEventListener('input', updateColorAndButton);
+    retentionAmountInput.addEventListener('input', updateColorAndButton);
+    deductionAmountInput.addEventListener('input', updateColorAndButton);
+    invoiceTotalInput.addEventListener('input', updateColorAndButton);
+    releaseRetentionFirstHalfInput.addEventListener('input', updateColorAndButton);
+    releaseRetentionSecondHalfInput.addEventListener('input', updateColorAndButton);
+    recoveryOfAdvanceInput.addEventListener('input', updateColorAndButton);
+    
+    // Initial check
+    updateColorAndButton();
+});
+</script>
     @endsection
+
+    
