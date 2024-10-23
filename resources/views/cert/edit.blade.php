@@ -60,18 +60,7 @@
                                    readonly>
                         </div>
 
-                        <div class="mb-4">
-                            <label   class="hidden block text-gray-700 text-sm font-bold mb-2" for="PO Num">
-                                SWO Number
-                            </label>
-                            <input class="hidden shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                   id="po_number" 
-                                   type="text" 
-                                   name="po_number" 
-                                   value="{{ old('PO_number', $cert->PO_number) }}" 
-                                   readonly>
-                        </div>
-                        
+                    
                         </form>
 
 
@@ -105,7 +94,7 @@
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="col11">
-                                Work Done to Date
+                                Work Done to Date - A
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="col11" 
@@ -119,7 +108,7 @@
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="col13">
-                                Material on Site
+                                Material on Site - B
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="col13" 
@@ -127,14 +116,44 @@
                                    step="0.01"
                                    name="col13" 
                                    value="{{ old('col13', $cert->col13) }}"
-                                   required
+                                   
+                                   
+                                >
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col25">
+                                Add: Approved VO - C
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="col25" 
+                                   type="number"
+                                   step="0.01"
+                                   name="col25" 
+                                   value="{{ old('col25', $cert->col25) }}"
+                                   
+                                   
+                                >
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2 " for="col27">
+                                Add: Awaiting VO - D
+                            </label>
+                            <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                   id="col27" 
+                                   type="number"
+                                   step="0.01"
+                                   name="col27" 
+                                   value="{{ old('col27', $cert->col27) }}"
+                                   
                                    
                                 >
                         </div>
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="advance_amount">
-                                Advance Payment
+                                Advance Payment - E
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="advance_amount" 
@@ -142,14 +161,14 @@
                                    step="0.01"
                                    name="advance_amount" 
                                    value="{{ old('advance_amount', $cert->advance_amount) }}"
-                                   required
+                                   
                                    
                                 >
                         </div>
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="col15">
-                                Recovery of Advance
+                                Recovery of Advance - F
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="col15" 
@@ -157,14 +176,14 @@
                                    step="0.01"
                                    name="col15" 
                                    value="{{ old('col15', $cert->col15) }}"
-                                   required
+                                   
                                    
                                 >
                         </div>
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="retention_amount">
-                                Retention Amount
+                                Retention Amount - G
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="retention_amount" 
@@ -172,13 +191,13 @@
                                    step="0.01"
                                    name="retention_amount" 
                                    value="{{ old('retention_amount', $cert->retention_amount) }}"
-                                   required
+                                   
                                 >
                         </div>
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="col17">
-                                Release Retention First Half
+                                Release Retention First Half - H
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="col17" 
@@ -186,13 +205,13 @@
                                    step="0.01"
                                    name="col17" 
                                    value="{{ old('col17', $cert->col17) }}"
-                                   required
+                                   
                                 >
                         </div>
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="col21">
-                                Release Retention Second Half
+                                Release Retention Second Half - I
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="col21" 
@@ -200,13 +219,13 @@
                                    step="0.01"
                                    name="col21" 
                                    value="{{ old('col21', $cert->col21) }}"
-                                   required
+                                   
                                 >
                         </div>
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2 " for="deduction_amount">
-                                Deduction Amount
+                                Deduction Amount - J
                             </label>
                             <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                    id="deduction_amount" 
@@ -214,7 +233,7 @@
                                    step="0.01"
                                    name="deduction_amount" 
                                    value="{{ old('deduction_amount', $cert->deduction_amount) }}"
-                                   required
+                                   
                                 >
                         </div>
 
@@ -345,6 +364,8 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("triggered");
     const workDoneInput = document.getElementById('col11');
     const materialOnSiteInput = document.getElementById('col13');
+    const approvedVOInput = document.getElementById('col25');
+    const awaitingVOInput = document.getElementById('col27');
     const advanceAmountInput = document.getElementById('advance_amount');
     const releaseRetentionFirstHalfInput = document.getElementById('col17');
     const releaseRetentionSecondHalfInput = document.getElementById('col21');
@@ -357,6 +378,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateColorAndButton() {
         const workDone = parseFloat(workDoneInput.value) || 0;
        const materialOnSite = parseFloat(materialOnSiteInput.value) || 0;
+       const approvedVO = parseFloat(approvedVOInput.value) || 0;
+       const awaitingVO = parseFloat(awaitingVOInput.value) || 0;
         const advanceAmount = parseFloat(advanceAmountInput.value) || 0;
         const retentionAmount = parseFloat(retentionAmountInput.value) || 0;
         const deductionAmount = parseFloat(deductionAmountInput.value) || 0;
@@ -365,7 +388,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const releaseRetentionSecondHalf = parseFloat(releaseRetentionSecondHalfInput.value) || 0;
         const recoveryOfAdvance = parseFloat(recoveryOfAdvanceInput.value) || 0;
 
-        const calculatedTotal = workDone + materialOnSite + advanceAmount + releaseRetentionFirstHalf + releaseRetentionSecondHalf -
+        const calculatedTotal = workDone + materialOnSite + approvedVO + awaitingVO + advanceAmount + releaseRetentionFirstHalf + releaseRetentionSecondHalf -
         (recoveryOfAdvance + retentionAmount + deductionAmount);
 
         const calculatedTotal_fixed = Math.trunc(calculatedTotal * 100) / 100;
@@ -399,6 +422,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     workDoneInput.addEventListener('input', updateColorAndButton);
     materialOnSiteInput.addEventListener('input', updateColorAndButton);
+    approvedVOInput.addEventListener('input', updateColorAndButton);
+    awaitingVOInput.addEventListener('input', updateColorAndButton);
     advanceAmountInput.addEventListener('input', updateColorAndButton);
     retentionAmountInput.addEventListener('input', updateColorAndButton);
     deductionAmountInput.addEventListener('input', updateColorAndButton);
