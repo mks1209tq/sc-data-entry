@@ -25,6 +25,10 @@ Route::get('/done', function () {
     return view('done');
 })->middleware(['auth', 'verified'])->name('done');
 
+Route::get('/certs/create', function () {
+    return view('create');
+})->middleware(['auth', 'verified'])->name('certs.create');
+
 
 
 Route::middleware('auth')->group(function () {

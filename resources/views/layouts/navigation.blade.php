@@ -31,9 +31,11 @@
                         {{ __('Done') }}
                     </x-nav-link>
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    @if (Auth::user()->is_admin)
                     <x-nav-link :href="route('certs.create')" :active="request()->routeIs('certs.create')">
                         {{ __('Create New') }}
                     </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -153,10 +155,11 @@
 
                 </x-responsive-nav-link>
 
+                @if (Auth::user()->is_admin)
                 <x-responsive-nav-link :href="route('certs.create')">
                     {{ __('Create New') }}
                 </x-responsive-nav-link>
-
+                @endif
             </div>
         </div>
     </div>
