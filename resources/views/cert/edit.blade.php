@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
     @section('content')
+    @auth
     <div class="pt-3">
     
         <div class="max-w-7xl mx-auto sm:px-1 lg:px-2">
@@ -358,6 +359,14 @@
             </div>
         </div>
     </div>
+    @else
+    <div class="pt-3">
+        <div class="max-w-7xl mx-auto sm:px-1 lg:px-2 flex items-center justify-center">
+            <p>You must be logged in to view this page.</p>
+            <a href="{{ route('login') }}" class="text-blue-500 hover:text-blue-700">Log in</a>
+        </div>
+    </div>
+@endauth
 
     <script>
 document.addEventListener('DOMContentLoaded', function() {
