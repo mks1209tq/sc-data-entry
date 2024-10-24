@@ -39,7 +39,7 @@
                     @foreach ($certs as $cert)
                         <!-- <p>{{ $cert->employee_id }}</p> -->
                         <p>
-                            <a href="{{ route('certs.edit', $cert->id) }}">{{ $cert->id}}</a>&nbsp;nbsp;
+                            <a href="{{ route('certs.edit', $cert->id) }}">{{ $cert->id}}</a>&nbsp;&nbsp;
                             <a href="{{ route('certs.edit', $cert->id) }}">{{ $cert->file_name }}</a>
                         </p>
 
