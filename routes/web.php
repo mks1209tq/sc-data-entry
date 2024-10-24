@@ -47,3 +47,6 @@ Route::middleware('auth')->group(function () {
 });
 
 
+
+
+Route::resource('posts', App\Http\Controllers\PostController::class);

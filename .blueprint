@@ -1,18 +1,4 @@
-created:
-    - app/Http/Controllers/CertController.php
-    - database/factories/CertFactory.php
-    - database/migrations/2024_10_17_105946_create_certs_table.php
-    - app/Models/Cert.php
-    - database/seeders/CertSeeder.php
-    - tests/Feature/Http/Controllers/CertControllerTest.php
-    - app/Http/Requests/CertStoreRequest.php
-    - app/Http/Requests/CertUpdateRequest.php
-    - resources/views/cert/index.blade.php
-    - resources/views/cert/create.blade.php
-    - resources/views/cert/show.blade.php
-    - resources/views/cert/edit.blade.php
-updated:
-    - routes/web.php
 models:
+    Cert: { file_name: string, project_id: string, order_id: string, pc_id: string, latest_pc_id: string, advance_amount: 'string nullable', retention_amount: 'string nullable', deduction_amount: 'string nullable', user_id: 'integer nullable', single_po: "boolean default:'0'", PO_number: "string default:'0'", col1: "string default:'0'", col2: "integer default:'0'", col3: "string default:'0'", col4: "integer default:'0'", col5: "string default:'0'", col6: "integer default:'0'", col7: "string default:'0'", col8: "integer default:'0'", col9: "string default:'0'", col10: "integer default:'0'", col11: "string default:'0'", col12: "integer default:'0'", col13: "string default:'0'", col14: "integer default:'0'", col15: "string default:'0'", col16: "integer default:'0'", col17: "string default:'0'", col18: "integer default:'0'", col19: "string default:'0'", col20: "integer default:'0'", col21: "string default:'0'", col22: "integer default:'0'", col23: "string default:'0'", col24: "integer default:'0'", col25: "string default:'0'", col26: "integer default:'0'", col27: "string default:'0'", col28: "integer default:'0'", col29: "string default:'0'", col30: "integer default:'0'" }
+    Passport: { employee_id: string, file_name: string, is_data_correct: "boolean nullable default:'0'", is_data_entered: "boolean nullable default:'0'", passport_expiry_date: 'date nullable', visa_expiry_date: 'date nullable', user_id: 'integer nullable' }
     User: { name: string, is_admin: "string default:'0'", email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string nullable' }
-    Cert: { id: id, softdeletes: softDeletes }

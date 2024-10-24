@@ -20,7 +20,11 @@ class CertStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            
+            'document' => 'required',
+            'project_id' => 'required',
+            'order_id' => 'required',
+            'pc_id' => 'required',
+            'latest_pc_id' => 'required',
         ];
     }
 }

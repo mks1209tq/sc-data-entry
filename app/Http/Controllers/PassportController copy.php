@@ -8,7 +8,6 @@ use App\Models\Passport;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use Illuminate\Support\Facades\Storage;
 
 class PassportController extends Controller
 {
@@ -28,56 +27,9 @@ class PassportController extends Controller
     {
         // dd($request->all());
         
-
-    
-        if ($request->hasFile('document')) {
-            $file = $request->file('document');
-            $fileName = $file->getClientOriginalName();
-            $folder = 'finished/';
-            
-            try {
-                // Attempt to store the file
-                $success = Storage::disk('idrive_e2')->put($folder.$fileName, file_get_contents($file->getRealPath()));
-                
-                // Prepare the response
-                $response = [
-                    'success' => $success,
-                    'file_name' => $fileName,
-                    'file_size' => $file->getSize(),
-                    'file_mime' => $file->getMimeType(),
-                    'storage_path' => $success ? $fileName : null,  // Changed this line
-                ];
-    
-                // If the storage failed, try to get more information
-                if (!$success) {
-                    $response['error'] = 'File upload failed. Check your iDrive configuration.';
-                }
-    
-                // Dump and die with the response
-                // dd($response);
-    
-            } catch (\Exception $e) {
-                dd([
-                    'success' => false,
-                    'error' => $e->getMessage(),
-                    'file_name' => $fileName,
-                ]);
-            }
-        }
-    
-        // dd('No file was uploaded');
-        //return view('document.create');
-
-        $passport = Passport::create([
-            'employee_id' => $request->employee_id,
-        
-            'file_name' => $folder.$fileName,
-            
-        ]);
+        $passport = Passport::create($request->validated());
 
         $request->session()->flash('passport.id', $passport->id);
-        
-        // dd($response);
 
         return redirect()->route('passports.index');
     }

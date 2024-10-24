@@ -19,9 +19,13 @@ class PassportStoreRequest extends FormRequest
      */
     public function rules(): array
     {
+        // dd($this->all());
         return [
+            
             'employee_id' => 'required',
             'file_name' => 'required',
+            'document' => 'required', // 10MB Max
+            // 'document' => 'required|file|max:10240', // 10MB Max
         ];
     }
 }

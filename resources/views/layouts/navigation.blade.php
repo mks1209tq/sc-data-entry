@@ -30,6 +30,10 @@
                     <x-nav-link :href="route('done')" :active="request()->routeIs('done')">
                         {{ __('Done') }}
                     </x-nav-link>
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('certs.create')" :active="request()->routeIs('certs.create')">
+                        {{ __('Create New') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -147,6 +151,10 @@
                 <x-responsive-nav-link :href="route('done')">
                     {{ __('Done') }}
 
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('certs.create')">
+                    {{ __('Create New') }}
                 </x-responsive-nav-link>
 
             </div>

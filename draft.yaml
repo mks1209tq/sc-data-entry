@@ -1,12 +1,16 @@
 models:
-  Cert:
-    id
+  Post:
+    title: string:400
+    content: longtext nullable
+    file_name: string:255 nullable
+    file_upload: string:255 nullable
     softDeletes
+    timestamps
  
 
 controllers:
-  Cert:
+  Post:
     resource
 
-seeders: Cert
+
     
