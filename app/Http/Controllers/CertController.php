@@ -9,7 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\Auth;
 
 class CertController extends Controller
 {
@@ -20,8 +20,11 @@ class CertController extends Controller
         return view('cert.index', compact('certs'));
     }
 
-    public function create(Request $request): View
+    public function create(Request $request): View|RedirectResponse
     {
+         if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'You must be logged in to create a cert.');
+        }
         return view('cert.create');
     }
 
