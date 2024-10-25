@@ -30,11 +30,13 @@ Route::get('/certs/create', function () {
 })->middleware(['auth', 'verified'])->name('certs.create');
 
 
-
+// allow only
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/certs/create', [CertController::class, 'create'])->name('certs.create');
+    Route::post('/certs', [CertController::class, 'store'])->name('certs.store');
 });
 
 

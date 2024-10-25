@@ -9,9 +9,10 @@ class CertStoreRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function authorize(): bool
-    {
-        return true;
+    public function authorize()
+{
+        return Auth::check() && Auth::user()->is_admin;
+        // return true;
     }
 
     /**
@@ -20,7 +21,7 @@ class CertStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'document' => 'required',
+            'document' => 'required|file|max:10240|mimes:pdf,jpg,jpeg,png',
             'project_id' => 'required',
             'order_id' => 'required',
             'pc_id' => 'required',

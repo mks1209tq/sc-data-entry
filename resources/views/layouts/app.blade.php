@@ -30,6 +30,11 @@
             <!-- Page Content -->
             <main>
                 @yield('content')
+                @if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+                    </div>
+                @endif
             </main>
         </div>
     </body>

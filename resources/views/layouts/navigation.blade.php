@@ -30,13 +30,15 @@
                     <x-nav-link :href="route('done')" :active="request()->routeIs('done')">
                         {{ __('Done') }}
                     </x-nav-link>
+                    @auth
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     @if (Auth::user()->is_admin)
                     <x-nav-link :href="route('certs.create')" :active="request()->routeIs('certs.create')">
-                        {{ __('Create New') }}
-                    </x-nav-link>
-                    @endif
-                </div>
+                            {{ __('Create New') }}
+                        </x-nav-link>
+                        @endif
+                    </div>
+                    @endauth
             </div>
 
             <!-- Settings Dropdown -->
@@ -154,12 +156,13 @@
                     {{ __('Done') }}
 
                 </x-responsive-nav-link>
-
+                @auth
                 @if (Auth::user()->is_admin)
-                <x-responsive-nav-link :href="route('certs.create')">
-                    {{ __('Create New') }}
-                </x-responsive-nav-link>
-                @endif
+                    <x-responsive-nav-link :href="route('certs.create')">
+                        {{ __('Create New') }}
+                    </x-responsive-nav-link>
+                    @endif
+                @endauth
             </div>
         </div>
     </div>

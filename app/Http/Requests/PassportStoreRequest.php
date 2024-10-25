@@ -24,7 +24,7 @@ class PassportStoreRequest extends FormRequest
             
             'employee_id' => 'required',
             'file_name' => 'required',
-            'document' => 'required', // 10MB Max
+            'document' => 'required|file|max:10240|mimes:pdf,jpg,jpeg,png', // 10MB Max
             // 'document' => 'required|file|max:10240', // 10MB Max
         ];
     }
